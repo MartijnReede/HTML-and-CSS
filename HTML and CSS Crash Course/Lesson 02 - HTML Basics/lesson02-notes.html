@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Lesson 02</title>
+</head>
+<body>
+	<h3>Some other useful tags</h3>
+		<p>- &ltb&gt &lt/b&gt or &ltstrong&gt &lt/strong&gt - Both are <b>used</b> to make text <b>bold.</b></p>
+		<p>- &lti&gt &lt/i&gt or &ltem&gt &lt/em&gt - Both are <i>used</i> to make text <em>italicized.</em></p>
+		<p>- &ltsmall&gt &lt/small&gt - Is used to make text slightly <small>smaller.</small></p>
+		<p>- &lta th:href="@{/lesson01}"&gt &lt/a&gt - With thymeleaf, this is used to create a link back to lesson01: <a th:href="@{/lesson01}">Go back!</a></p>
+		<p>- The style attribute can be used for CSS code. It can be placed inside another tag like this: &ltp style="color: red"&gtSome red text&lt/p&gt. <text style="color: red">This is red!</text></p>
+		<p>- Comments can be written in between these tags: &lt!-- some comment --&gt. Everything in between those tags will not be seen as HTML by the browser.</p>
+		<br/>
+	
+	<h3>Heading tags</h3>
+		<p><h1> - &lth1&gt &lt/h1&gt - Heading tag h1</h1></p>
+		<p><h2> - &lth2&gt &lt/h2&gt - Heading tag h2</h2></p>
+		<p><h3> - &lth3&gt &lt/h3&gt - Heading tag h3</h3></p>
+		<p><h4> - &lth4&gt &lt/h4&gt - Heading tag h4</h4></p>
+		<p><h5> - &lth5&gt &lt/h5&gt - Heading tag h5</h5></p>
+		<p><h6> - &lth6&gt &lt/h6&gt - Heading tag h6</h6></p>
+		</br>
+		
+	<h3>Lists</h3>
+		<p>&ltul&gt &lt/ul&gt - Used as a wrapper of unordered lists.
+			<ul>
+				<li>&ltli&gtIs used for every item in the list.&lt/li&gt</li>	
+				<li>&ltli&gtAnother item in the list.&lt/li&gt</li>	
+				<li>&ltli&gtA third item in the list.&lt/li&gt</li>	
+			</ul>
+		</p> 
+		
+		<p>&ltol&gt &lt/ol&gt - Used as a wrapper of ordered lists. By default, it orders items by number.
+			<ol>
+				<li>&ltli&gtIs used for every item in the list.&lt/li&gt</li>	
+				<li>&ltli&gtAnother item in the list.&lt/li&gt</li>	
+				<li>&ltli&gtA third item in the list.&lt/li&gt</li>		
+			</ol>
+		</p>
+		<br/>
+		
+		<h3>Div and span</h3>
+			<p>- &ltdiv&gt &lt/div&gt - Div tags mark out different sections of the web page.</p>
+			<p>- Div tags will come in handy when using CSS.</p>
+			<p>- &ltspan&gt &lt/span&gt - Span tags also mark out different sections of the web page.</p>
+			<p>- Later in the course it will be explained how these can be used.</p>
+			<br/>
+			
+		<h3>Single tags (not paired)</h3>	
+			<p>- Until now, all tags we used consist out of an opening and closing tag. But there are also single tags that we can use.</p>
+			<p>- &ltbr/&gt - Is used to proceed<br/>on the next line. It doesn't need a closing tag.</p>
+			<p>- &lthr/&gt - Is used to create a horizontal line on the page.<hr/></p>
+			<p>- &ltimg/&gt - Is used to show a picture on the web page, but we have to specify the location using src. Using Thymeleaf this would be: &ltimg th:src="@{images/MarioImage.jpg}"/&gt</p> 
+			<p>- To set the width or heigth of the picture we use width="..." heigth="...".</p>
+			<p>- The complete tag for the image below is: &ltimg width="200" heigth="200" th:src="@{images/MarioImage.jpg}"/&gt</p>
+			<p> <img width="200" heigth="200" th:src="@{images/MarioImage.jpg}"/></p>
+			<p>- The alt="" attribute is used to present an alternative in case the image cannot be found. Below I've used the following code: &ltimg alt="Image can not be found!" th:src="@{NO/PICTURE/HERE}"/&gt
+			<p>- <img alt="Image can not be found!" th:src="@{NO.PICTURE.HERE.FOR.SURE}"/></p> 
+			
+		
+
+</body>
+</html>

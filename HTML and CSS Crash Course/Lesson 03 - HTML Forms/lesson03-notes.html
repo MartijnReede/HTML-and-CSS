@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Lesson 03</title>
+</head>
+<body>
+<h3>Forms</h3>
+	<ul>
+		<li>Forms are basically multiple input fields. This lesson will show different types of them.</li>
+		<li>Everything that belongs to a form needs to be wrapped inside of form tags like this: &ltform&gt input fields &lt/form&gt.</li>
+		<li>The id="someText" attribute can be used to link a certain style or label to input fields.</li>
+		<li>The placeholder="" attribute can be used place some light-gray text inside of the text fields.</li>
+		<li>Using the right input types is really important. If someone has to enter an email address and doesn't use an '@', the web page won't submit the form if the input type is email.</li>
+		<li>If we want to force the user to enter some data, we can add the required attribute. We don't have to give it any value. An example would be: &ltinput type="text" required/&gt</li>
+		<li>For more input types check this link: <a href="https://www.w3schools.com/html/html_form_input_types.asp">W3 Schools</a>.</li>
+	</ul>
+	
+<h3>Form example</h3>
+	
+	<form>
+		<label for="username">Enter Username: </label>
+		<input type="text" id="username" placeholder="username"/>
+		<br/><br/>
+		<label for="email">Enter Email: </label>
+		<input type="email" id="email" placeholder="email"/>	
+		<br/><br/>
+		<label for="password">Enter Password: </label>
+		<input type="password" id="password" placeholder="password"/>
+	</form>
+	<br/>
+	
+	<p>The code for the form above:</p>
+		
+	<p>	
+	&ltform&gt<br/>
+		&ltlabel for="username"&gtEnter Username: &lt/label&gt<br/>
+		&ltinput type="text" id="username" placeholder="username"/&gt<br/>
+		&ltbr/&gt&ltbr/&gt<br/>
+		&ltlabel for="email"&gtEnter Email: &lt/label&gt<br/>
+		&ltinput type="email" id="email" placeholder="email"/&gt<br/>	
+		&ltbr/&gt&ltbr/&gt<br/>
+		&ltlabel for="password"&gtEnter Password: &lt/label&gt<br/>
+		&ltinput type="password" id="password" placeholder="password"/&gt<br/>
+	&lt/form&gt
+	</p>
+	
+	<h3>The name attribute and radio buttons</h3>
+		<ul>
+			<li>The name attribute can be used to link different buttons together. If one button is checked, all other buttons become unchecked.</li>
+			<li>Radio buttons are a collection of buttons of which only one can be selected.</li>
+			<li>We use the value attribute to define what value stands for a selected button.</li>
+		</ul>
+		
+	<p>Example:</p>
+		
+		Select your gender:<br/>
+		<input type="radio" value="Male" name="gender"/>Male<br/>
+		<input type="radio" value="Female" name="gender"/>Female<br/>
+		<input type="radio" value="Other" name="gender"/>Other<br/>
+	
+	<p>The code for the buttons above:</p>
+		&ltinput type="radio" value="Male" name="gender"/&gtMale<br/>
+		&ltinput type="radio" value="Female" name="gender"/&gtFemale<br/>
+		&ltinput type="radio" value="Other" name="gender"/&gtOther<br/>
+		
+		
+	<h3>Select box</h3>
+		
+		<p>Example:</p>
+		
+		<label for="selectBox">Select an option:</label>
+		<select id="selectBox">
+			<option value="option1">Option 1</option>
+			<option value="option2">Option 2</option>
+			<option value="option3">Option 3</option>
+		</select>
+		
+		<p>The code for the select box above:</p>
+		
+		&ltlabel for="selectBox">Select an option:&lt/label&gt<br/>
+		&ltselect id="selectBox"&gt<br/>
+			&ltoption value="option1"&gtOption 1&lt/option&gt<br/>
+			&ltoption value="option2"&gtOption 2&lt/option&gt<br/>
+			&ltoption value="option3"&gtOption 3&lt/option&gt<br/>
+		&lt/select&gt<br/>
+		
+	<h3>Text area</h3>
+	
+		<ul>
+			<li>A text area is not created by input tags. It is made with different tags: &lttextarea&gt &lt/textarea&gt.</li>
+			<li>We can set the size of the text area with the cols=".." and rows=".." attributes.</li>
+		</ul>
+		
+		<p>Example:</p>
+		
+		<label for="textArea">Enter a description:</label><br/>
+		<textarea id="textArea" cols="30" rows="10" placeholder="Your description here please..."></textarea>
+		
+		<p>The code for the text area above:</p>
+		
+		&ltlabel for="textArea">Enter a description:&lt/label&gt<br/>
+		&lttextarea id="textArea" cols="30" rows="10" placeholder="Your description here please..."&gt&lt/textarea&gt
+	
+	<h3>The submit button</h3>
+	
+		<ul>
+			<li>If a submit button is placed between form tags, user input will be submitted via a post request.</li>
+			<li>The value attribute in this case, stands for the text inside of the button.</li>
+		</ul>
+		
+		<p>Example:</p>
+	
+		<input type="submit" value="!! SUBMIT THE FORM !!"/>
+		
+		<p>The code for the button above:</p>
+		
+		&ltinput type="submit" value="!! SUBMIT THE FORM !!"&gt
+			
+</body>
+</html>
