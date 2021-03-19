@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lesson 06</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/NavigationBar.css}"/>
+</head>
+<body>
+<nav th:replace="Layout :: navBar"></nav>
+<h3>HTML5 semantic tags</h3>
+	
+	<p>Semantic tags help the browser to understand where our content is all about. 
+	For example: If we place an article inside of a div tag, our browser has no idea that it 
+	is an article. Semantic tags aim to make our code more meaningful and solve this problem. Below I've listed a few semantic tags:</p>
+	<ul>
+		<li>&ltmain&gt &lt/main&gt Contains the main content of our web page.</li>
+		<li>&ltacticle&gt &lt/article&gt Contains an article.</li>
+		<li>&ltsection&gt &lt/section&gt Defines a section of the web page (contact info, blog, etc).</li>
+		<li>&ltaside&gt &lt/aside&gt Related content which is not part of the main content.</li>
+		<li>&ltheader&gt &lt/header&gt For the header of the website (navigation bar, title, etc).</li>
+		<li>&ltfooter&gt &lt/footer&gt For the footer of the website.</li>
+	</ul>	
+
+</body>
+</html>
