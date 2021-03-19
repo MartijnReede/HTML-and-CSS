@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lesson 05</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/NavigationBar.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/lesson05-Style.css}">
+</head>
+<body>
+	
+	<nav th:replace="Layout :: navBar"></nav>
+
+	<h3>Classes</h3>
+	<ul>
+		<li>Class attributes are used to point to specific selectors in CSS.</li>
+		<li>So if we want only one paragraph to have a specific color we can do: &ltp class="test"&gt Some text.. &lt/p&gt.
+		<li>In the CSS file, we're not using the p selector anymore. To refer to this particular paragraph we need to write: .test{some CSS code}.</li>
+		<li>Now this CSS code will apply to all the tags that have class="test". If we want the CSS code to only apply to p tags, we need to write: p.test{some CSS code} in the CSS file.</li>
+		<li>It is also possible to define two classes in a tag. This would look like: &ltp class="test example"&gt. In CSS we can refer to it by: test.example{CSS code} or p.test.example{CSS code}</li>
+	</ul>
+	
+	Example of 4 paragraphs:
+	
+	<p>&ltp&gtLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+	dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+	ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+	id est laborum.&lt/p&gt</p>
+	
+	<p class="test">&ltp class="test"&gtLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+	dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+	ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+	id est laborum.&lt/p&gt</p>
+	
+	<p class="style">&ltp class="style"&gtLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+	dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+	ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+	id est laborum.&lt/p&gt</p>
+	
+	<p class="style moreStyle">&ltp class="style moreStyle"&gtLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+	dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+	ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+	id est laborum.&lt/p&gt</p>
+	
+	The CSS code used for the paragraphs above:
+	<p>
+	<b>p.test</b>{<br/>
+	color: orange;<br/>
+	}<br/><br/>
+
+	<b>p.style</b>{<br/>
+	color: red;<br/>
+	}<br/><br/>
+
+	<b>p.style.moreStyle</b>{<br/>
+	border: 2px solid black;<br/>
+	}<br/><br/>
+	</p>
+	
+	<h3>ID's</h3>
+	
+	<ul>
+		<li>ID's can be used as classes but they are not so commonly used for CSS. More often they are used for JavaScript.</li>
+		<li>How can we use them in CSS? It's almost the same as with a class attribute: &ltp id="testID"&gt</li>
+		<li>In the CSS file, we would refer to this id by: #testID{some CSS code}.</li>
+		<li>Just like classes, we can make the CSS code refer to only one specific tag type. If this would be a paragraph tag this would look like: p#testID{some CSS code}.</li>
+	</ul>
+	
+	<h3>Parents and children</h3>
+	
+	<ul>
+		<li>With using classes, we can be more specific about what elements we want to style.</li>
+		<li>For example: to style only paragraphs that are within a div tag, we use this CSS code: div p{some CSS code}.</li>
+		<li>Also it would be possible apply a style to certain classes that need to be in a div. In CSS this would look like: div .testclass{Some CSS code}.</li>
+	</ul>
+	
+	<h3>Looking for attributes</h3>
+
+	<ul>
+		<li>In CSS we can also look for certain attributes. For example, if we want to style only anchor tags with an href inside, we use this CSS code: a[href]{some CSS code}.</li>
+		<li>If we want the attribute to have a certain value, we can refer to this in CSS by: a[href="www.test.com"]{some CSS code}.</li>
+	</ul>
+	
+	<h3>Inheritance</h3>
+	
+		<p>Inheritance means that certain styles that are assigned to parent tags, will be inherited by their children. Mostly colors and font styles are inherited, 
+		there are also a lot of tags which are not inherited like borders or margin.</p>
+		<p>For example:</p>
+		
+		<div class="blue">
+			<p>&ltdiv class="blue"&gt<br/>
+			&ltp&gtHello, I am blue...&lt/p&gt<br/>
+			&lt/div&gt</p>
+		</div>
+		
+		By using the CSS code from below, the text inside of the p tag is made blue because the style of the parent div is assigned to blue.
+		
+		<p><b>div.blue</b>{<br/>
+		color: blue;<br/>
+		}<br/>
+		</p>
+</body>
+</html>

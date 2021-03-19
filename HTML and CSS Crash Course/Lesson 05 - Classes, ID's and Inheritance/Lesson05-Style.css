@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+
+p.test{
+	color: orange;
+}
+
+p.style{
+	color: red;
+}
+
+p.style.moreStyle{
+	border: 2px solid black;
+}
+
+div.blue{
+	color: blue;
+}
