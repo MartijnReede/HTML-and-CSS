@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/NavigationBar.css}"/>
+</head>
+<body>
+
+<div th:fragment="navBar" class="topnav">
+  	<a class="active" href="/">Home</a>
+	<a th:href="@{/lesson01}">Lesson 01</a>
+	<a th:href="@{/lesson02}">Lesson 02</a>
+	<a th:href="@{/lesson03}">Lesson 03</a>
+	<a th:href="@{/lesson04}">Lesson 04</a>
+</div>
+
+
+</body>
+</html>

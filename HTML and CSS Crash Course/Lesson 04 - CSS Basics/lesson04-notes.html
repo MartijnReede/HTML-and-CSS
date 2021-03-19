@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/NavigationBar.css}"/>
+<title>Lesson 04</title>
+
+<style>
+	h3 {
+	color:orange;
+	}
+</style>
+
+</head>
+<body>
+	<nav th:replace="Layout :: navBar"></nav>
+	<h3>CSS (Style Sheets)</h3>
+	
+	<ul>
+		<li>A style sheet is a list of CSS rules / rule sets.</li>
+		<li>Selectors are the HTML tags that we want to style in a CSS file.</li>
+		<li>A declaration is a line of code that gives a certain style to a selector.</li>
+		<li>If we use the &ltstyle&gt &lt/style&gt tags or the style attribute, we can write CSS in our HTML file. A better way to do it, is to write an external CSS file.</li>
+		<li>If we would define a style in an HTML file, this needs to be done in between the &lthead&gt &lt/head&gt tags.
+	</ul>
+	
+	<h3>How to use selectors and declarations</h3>
+		
+	<p>For example, if we want to style all div tags, we write something like this in the CSS file:</p>
+	<p><b>div</b> {<br/>
+		color: red;<br/>
+		margin: 20px;<br/>
+		}
+	</p>
+	<p> If we would like to style all list items, we would write something like this:</p>
+	<p><b>li</b>{<br/>
+		font-weight:bold;<br/>
+	}
+	</p>
+	<p>In the examples above, 'div' and 'li' are the selectors. "Color: red;" and "margin: 20px;" are declarations.</p>
+	
+	<h3>Using CSS inside of the HTML file</h3>
+	
+	<p style="color: green">We can use the style attribute. For this paragraph I've used this code: &ltp style="color: green"&gt</p>
+	<p>We can also use the style tags and place the code in between the head tags at the top of the HTML file. For this example, I've made all h3 tags orange using this code:</p>
+	<p>&ltstyle&gt</br>
+	<b>h3</b> {<br/>
+	color:orange;<br/>
+	} <br/>
+	&lt/style&gt
+	</p>
+	
+	<h3>Use CSS inside an external style sheet</h3>
+	
+	<ul>
+		<li>Since we are using Thymeleaf, there is a specific place to store CSS style sheets. The place for this is: src/main/recourses --> static. Create a new folder named CSS there.</li>
+		<li>So how do we use a CSS style sheet? Between the head tags at the top of the HTML file, we use the following code: &ltlink rel="stylesheet" href="locationOfFile"/&gt</li>
+		<li>So we use a link tag with the href=".." and a rel=".." attribute. Rel strands for relation. In this case, the relation is a stylesheet so we need to write: rel="stylesheet".</li>
+	</ul>
+	
+	<p>To keep this page readable, I've created a new page where all the CSS code applies to. The CSS code used for this page is displayed below.</p>
+	<p>In this HTML file, I've imported the style sheet like this: &ltlink rel="stylesheet" type="text/css" th:href="@{/CSS/Lesson04-Style.css}"/&gt</p>
+	<form action="/lesson04/lesson04-stylePage">
+	<button type="Submit" style="background-color:#264653; display: block; color:#e9c46a; padding: 20px; font-size: 15px;">GO TO CSS STYLED PAGE!</button>
+	</form>
+	
+	<p>CSS code fot the style page:</p>
+	
+	<p>
+	<b>h3</b>{<br/>
+	color: orange;<br/>
+	background-color: slategray;<br/>
+	font-size: 20px;<br/>
+	text-decoration: underline;<br/>
+	font-family: arial;<br/>
+	text-align: center;<br/>
+}<br/><br/>
+
+<b>p</b>{<br/>
+	color: slategray;<br/>
+	text-align: right;<br/>
+	line-height: 30px;<br/>
+	letter-spacing: 2px;<br/>
+	column-count: 2;<br/>
+	column-gap: 60px;<br/>
+}<br/><br/>
+
+<b>ul</b>{<br/>
+	border-width: 5px;<br/>
+	border-color: crimson;<br/>
+	border-style: solid;<br/>
+	border-bottom: 4px dashed blue;<br/>
+	border-top: 3px dotted green;<br/>
+}<br/><br/>
+
+<b>li</b>{<br/>
+	list-style-type: square;<br/>
+	text-shadow: 2px 2px lightgray;<br/>
+	font-size: 20px;<br/>
+}<br/><br/>
+	</p>
+	
+	<h3>Inline and block elements</h3>
+	<ul>
+		<li>Inline elements don't take up any more room than their content needs.</li>
+		<li>Inline elements are span, img, strong, em, a and many more...</li>
+		<li>Block level elements take up the whole width of the page regardless of their content.</li>
+		<li>Block line elements are p, div, h2, h3, li and many more...</li>	
+	</ul>
+	
+	<p>Reverse inline or block settings:</p>
+	
+	<p>In short: Block elements take up the whole width of the page, Inline elements only take the space they need.</p>
+	<p>In CSS we can change a block element to inline or vice versa. Changing a div (block type) to inline:
+	
+	<p><b>div</b>{<br/>
+	display: inline;<br/>
+	}
+	</p>
+	
+	<p>Changing a span (inline type) to block:</p>
+	
+	<p><b>span</b>{<br/>
+	display: block;<br/>
+	}
+	</p>
+	
+	<h3>Margin and padding</h3>
+	
+	<ul>
+		<li>Margin defines the space around the border of a particular element.</li>
+		<li>Padding defines the internal space between the content and the border.</li>
+		<li>To block level elements, padding and margin works as expected. To inline elements, marging and padding only works to the left and right.</li>
+		
+	</ul>
+	
+	<img th:src="@{/images/PaddingAndMargin.png}">
+</body>
+</html>
